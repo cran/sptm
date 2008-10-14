@@ -101,41 +101,39 @@ void get_phi (int * _n, int * _p, double * _u, double * _phi) {
 }
 
 
-void V2 (int * _n, int * _p, double * _Z, double * _V, 
-     double * Xcc, int * _N, int * d, double * X ) {
+void V2 (int * _n, int * _p, double * Z, double * V, 
+     double * Xcc, int * N, int * d, double * X ) {
 	
 	int n = *_n;
 	int p = *_p;
-//		double (*Z)[p] = (double (*)[p]) _Z;
-//		double (*V)[p] = (double (*)[p]) _V;
-	int N = *_N;
+	int capN= *N;
 	
 	for (int q1=0; q1<p; q1++)
 		for (int q2=0; q2<p; q2++)
-			_V[q1*p+q2] = 0;
+			V[q1*p+q2] = 0;
 
 	// int N1=1; // for debugging
 	//double q_t[p];
     // cannot use new b/c it is C not C++
     double * q_t = (double *)malloc(p * sizeof(double));
-	for (int i=0; i<N; i++) {
+	for (int i=0; i<capN; i++) {
 
 		double _t = X[i];
 		
 		for (int q=0; q<p; q++) {
 			q_t[q]=0;
 			for (int j=0; j<n*n; j++) {
-				q_t[q] += _Z[j*p+q] * (Xcc[j]>=_t?1:0);
+				q_t[q] += Z[j*p+q] * (Xcc[j]>=_t?1:0);
 			}
 		}			
 
 		int c=0;
-		for (int i1=0; i1<N; i1++)
+		for (int i1=0; i1<capN; i1++)
 			c += X[i1]>=_t;
 			
 		for (int q1=0; q1<p; q1++) {
 			for (int q2=q1; q2<p; q2++) {
-				_V[q1*p+q2] += (1-_t)/(c*c) * q_t[q1]*q_t[q2];
+				V[q1*p+q2] += (1-_t)/(c*c) * q_t[q1]*q_t[q2];
 				// for debugging
 				//cout << V[q1][q2] << endl;
 			}
@@ -146,7 +144,7 @@ void V2 (int * _n, int * _p, double * _Z, double * _V,
 		
 	for (int q1=0; q1<p; q1++) {
 		for (int q2=q1; q2<p; q2++) {
-			_V[q2*p+q1] = _V[q1*p+q2];
+			V[q2*p+q1] = V[q1*p+q2];
 		}
 	}		
 	

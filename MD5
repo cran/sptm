@@ -1,5 +1,5 @@
-e6170913442a419052d87e2467436a24 *ChangeLog
-a5d7cf7ac4b69bfb126b11cd772e43d7 *DESCRIPTION
+fa56ed7f36750b85c6472120f6230ecc *ChangeLog
+011b4bbac40292467148ea38b2c78aee *DESCRIPTION
 1716d80850dc213f1c15ce2900de0f2e *NAMESPACE
 16f9f0fb23448eba44f64be3defa127a *R/Breslow.Thomas.deprecated.R
 17ca0279b860ecb95e883815a1fac9f9 *R/enhanced.ipw.coxph.R
@@ -18,5 +18,5 @@ dc0bbc53e51d2cf3e202a2db28191cc4 *man/sim.kong.Rd
 ba94aa995044c22a3b6b3c25226ea6be *man/stm.Rd
 2a6f9e9e044a78154d3cfda5936d6f48 *src/Makevars
 429b001713d09ce3a20c0e03325359c9 *src/Makevars.win
-e9aa2422352da7faf60ffab4b8e3f252 *src/stm.cpp
+d42a714e1f22813c7061c32b4c7d6a30 *src/stm.cpp
 dd92948d556c3b83c4dde905a865f7c7 *tests/doRUnit.R

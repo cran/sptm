@@ -11,3 +11,5 @@
 	* phase2.p in sim.fong changes, and unit testing code has to change
 	too
 
+2014-10-10  Youyi Fong
+	* change V2 C++ function to avoid portability problem

@@ -1,0 +1,13 @@
+2011-05-25  Youyi Fong  <yfong@fhcrc.org>
+
+    * added enhanced.ipw.coxph
+
+2013-08-28  Youyi Fong  <yfong@fhcrc.org>
+
+    * incorporate most common functions from surrograte_0
+
+2014-10-08  Youyi Fong
+	* change name from stm to sptm, because stm has been taken
+	* phase2.p in sim.fong changes, and unit testing code has to change
+	too
+

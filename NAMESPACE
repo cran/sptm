@@ -1,0 +1,7 @@
+useDynLib(sptm)
+
+export(enhanced.ipw.coxph, stm, getFixedEf.stm)
+export(sim.fong, sim.kong, rstm)
+
+importFrom(kyotil, '%+%', startsWith, keepWarnings, .as.double)
+import(survey, survival)

@@ -3,5 +3,15 @@ useDynLib(sptm)
 export(enhanced.ipw.coxph, stm, getFixedEf.stm)
 export(sim.fong, sim.kong, rstm)
 
-importFrom(kyotil, '%+%', startsWith, keepWarnings, .as.double)
+importFrom(kyotil, '%+%', keepWarnings, .as.double, getFixedEf)
 import(survey, survival)
+  importFrom("grDevices", "dev.off")
+  importFrom("graphics", "abline", "lines", "plot")
+  importFrom("methods", "is")
+  importFrom("stats", "as.formula", "ave", "coef", "complete.cases",
+             "cov", "family", "lm", "lowess", "model.frame",
+             "model.matrix", "optim", "predict", "quantile", "rbinom",
+             "resid", "rnorm", "runif", "terms", "time")
+  importFrom("utils", "str", "tail")
+
+S3method(getFixedEf,stm)

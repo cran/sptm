@@ -1,17 +1,16 @@
 Package: sptm
 LazyLoad: yes
 LazyData: yes
-Version: 14.10-11
-Date: 14.10-08
+Version: 16.7-9
 Title: SemiParametric Transformation Model Methods
 Author: Youyi Fong <yfong@fhcrc.org>, Krisztian Sebestyen <ksebestyen@gmail.com>
 Maintainer: Youyi Fong <yfong@fhcrc.org>
-Depends: R (>= 3.0.0), survival, survey
-Imports: kyotil
+Depends: R (>= 3.0.0), survival, survey, kyotil
 Suggests: RUnit, mvtnorm, Matrix, MASS
-Description: Semiparametric transformation model, calibration weights
+Imports: methods
+Description: Implements semiparametric transformation model two-phase estimation using calibration weights.
 License: GPL (>= 2)
-Packaged: 2014-10-11 06:03:13 UTC; yfong
 NeedsCompilation: yes
+Packaged: 2016-07-09 17:26:43 UTC; Youyi
 Repository: CRAN
-Date/Publication: 2014-10-13 10:05:37
+Date/Publication: 2016-07-10 11:55:54

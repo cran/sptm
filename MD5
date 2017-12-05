@@ -1,6 +1,6 @@
 fa56ed7f36750b85c6472120f6230ecc *ChangeLog
-83f30818b8d807063211badde8455a29 *DESCRIPTION
-3844dc2a668b79305741ec7208fc6814 *NAMESPACE
+42e6fadeec3e715045bf917b66a8007b *DESCRIPTION
+c3403e8ed242a7de79786521616b5d1d *NAMESPACE
 16f9f0fb23448eba44f64be3defa127a *R/Breslow.Thomas.deprecated.R
 17ca0279b860ecb95e883815a1fac9f9 *R/enhanced.ipw.coxph.R
 ac8864d0e625a195a5efff511be49c35 *R/simulations.R
@@ -12,11 +12,12 @@ a616e808bd826e929f56223020649675 *inst/unitTests/Makefile
 bd5e111d687b788b598e9de45968c145 *inst/unitTests/runit.enhanced.ipw.coxph.R
 a8d122e4f0698116b0abe5e88abf36af *inst/unitTests/runit.stm.R
 c914c6816ddbc3fd3422cb4277db94e4 *man/enhanced.ipw.coxph.Rd
-0f8297399b3abf0a2205796d43542bc2 *man/rstm.Rd
+f385382e541b71918c086f24b26cd9fa *man/rstm.Rd
 8c855a04ec96b7b3207328c6244d2197 *man/sim.fong.Rd
 dc0bbc53e51d2cf3e202a2db28191cc4 *man/sim.kong.Rd
 ba94aa995044c22a3b6b3c25226ea6be *man/stm.Rd
 2a6f9e9e044a78154d3cfda5936d6f48 *src/Makevars
 429b001713d09ce3a20c0e03325359c9 *src/Makevars.win
+7c22b1b500cab25872924e218f1645f5 *src/registerDynamicSymbol.c
 d42a714e1f22813c7061c32b4c7d6a30 *src/stm.cpp
-dd92948d556c3b83c4dde905a865f7c7 *tests/doRUnit.R
+38ee5a997f4440cc1e3903ca2b0bc1ff *tests/doRUnit.R

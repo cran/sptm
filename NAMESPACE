@@ -1,4 +1,4 @@
-useDynLib(sptm)
+useDynLib(sptm, .registration = TRUE)
 
 export(enhanced.ipw.coxph, stm, getFixedEf.stm)
 export(sim.fong, sim.kong, rstm)

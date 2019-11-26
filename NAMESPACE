@@ -3,7 +3,7 @@ useDynLib(sptm, .registration = TRUE)
 export(enhanced.ipw.coxph, stm, getFixedEf.stm)
 export(sim.fong, sim.kong, rstm)
 
-importFrom(kyotil, '%+%', keepWarnings, .as.double, getFixedEf)
+importFrom(kyotil, '%.%', keepWarnings, .as.double, getFixedEf)
 import(survey, survival)
   importFrom("grDevices", "dev.off")
   importFrom("graphics", "abline", "lines", "plot")

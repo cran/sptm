@@ -101,7 +101,7 @@ sim.kong = function (gamma, beta, design="FULL", rho=0.9, seed=1, impute=FALSE, 
     C=runif(n, 0, ub.c)
     d=ifelse(C>ft, 1, 0)
     X=pmin(ft, C)
-    print("censoring proportion: " %+% round(1-mean(d),2))
+    print("censoring proportion: " %.% round(1-mean(d),2))
     
     out=data.frame(ft, C, X, d, x1, x2) 
     
@@ -114,7 +114,7 @@ sim.kong = function (gamma, beta, design="FULL", rho=0.9, seed=1, impute=FALSE, 
                 
         out$indicators=d
         out$indicators[sample(n, n*subcohort.p)]=1
-        print("control to case ratio " %+% round(sum(out$indicators)/sum(d)-1,2))
+        print("control to case ratio " %.% round(sum(out$indicators)/sum(d)-1,2))
         
         # generate w
         if (rho==1) {
@@ -137,7 +137,7 @@ sim.kong = function (gamma, beta, design="FULL", rho=0.9, seed=1, impute=FALSE, 
             #### additional operation on x1
 #            # early infection and early dropout: subjects not at risk anymore at 6 month cannot have s measured
 #            x1=ifelse (X<0.05, NA, x1)    
-#            print ("x1 is.na proportion: "%+%mean(is.na(x1)))
+#            print ("x1 is.na proportion: "%.%mean(is.na(x1)))
             # 15% loss due to non-adherence
             nonadhere=rbinom(nrow(out), 1, .15)==1            
             adherence.ratio = sum(out$indicators & !nonadhere) / sum(out$indicators)
@@ -283,7 +283,7 @@ sim.fine = function (n, ub.c, seed=1) {
     C=runif(n, 0, ub.c)
     d=C>ft
     X=pmin(ft, C)
-    print("censoring proportion: " %+% (1-mean(d)))
+    print("censoring proportion: " %.% (1-mean(d)))
         
     invisible( data.frame(ft, C, X, d, z) )
 }
@@ -317,7 +317,7 @@ sim.kong1 = function (n, gamma, design="FULL", rho=0.9, seed=1, impute=FALSE, pp
     C=runif(n, 0, ub.c)
     d=ifelse(C>ft, 1, 0)
     X=pmin(ft, C)
-    print("censoring proportion: " %+% round(1-mean(d),2))
+    print("censoring proportion: " %.% round(1-mean(d),2))
     
     out=data.frame(ft, C, X, d, z, w) 
     
@@ -333,7 +333,7 @@ sim.kong1 = function (n, gamma, design="FULL", rho=0.9, seed=1, impute=FALSE, pp
         out$indicators=d
         out$indicators[sample(n, n*subcohort.p)]=1
         attr(out, "selectedcontrols")=sum(out$indicators)-sum(d)
-        print("control to case ratio " %+% round(sum(out$indicators)/sum(d)-1,2))
+        print("control to case ratio " %.% round(sum(out$indicators)/sum(d)-1,2))
         out$ppi = 1
         out$ppi[d==0] = subcohort.p
         #out$ppi[d==0] = attr(out, "selectedcontrols") / attr(out, "controls")

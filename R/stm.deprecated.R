@@ -58,7 +58,7 @@ stm.deprecated=function(formula, dat, interest.model, method, init, p.weight="",
     if (startsWith(method, "fine") | method=="kong" ) {
         # truncation point
         if (is.null(t0)) t0=quantile(dat[dat$d==1,"X"],.85) # Fine et al choice, default
-        cat("truncation point: " %+% t0, "\n    ")
+        cat("truncation point: " %.% t0, "\n    ")
         observed = with(dat, ifelse(t0>=X[jj], d[jj] * (X[ii]>=X[jj]) / G.hat[jj]**2, 0) ) # d and X are part of dat
     }
     if (method=="cheng") {
@@ -181,8 +181,8 @@ stm.deprecated=function(formula, dat, interest.model, method, init, p.weight="",
     #if (method!="cheng") init=c(log(t0*baseline.hazard),init)
     if (method!="cheng") init[1]=init[1]+log(t0)
     
-    ee=get("ee."%+%method)
-    if(eff.inf) ei=get("ei."%+%method)
+    ee=get("ee."%.%method)
+    if(eff.inf) ei=get("ei."%.%method)
     
     # using cox estimate as init does not help.
     # choosing this between 1, .1 and .01 does seem to make a big difference

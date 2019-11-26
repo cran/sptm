@@ -389,9 +389,9 @@ contain =function (s1, s2) {
 
 
 # paste two strings together
-# e.g. "a" %+% "b"
+# e.g. "a" %.% "b"
 
-"%+%" <- function (a, b) {
+"%.%" <- function (a, b) {
     out=paste(a,b,sep="")
     out
 }
@@ -400,7 +400,7 @@ concatList = function (lis, sep=""){
     out=lis[[1]]
     i=2
     while (i<=length(lis)){
-        out=out%+%sep%+%lis[[i]]
+        out=out%.%sep%.%lis[[i]]
         i=i+1
     }
     out
@@ -426,7 +426,7 @@ myprint.default = function (..., newline=TRUE, digits=3) {
         if (contain(tmpname, "\"") | contain(tmpname, "\\")) {
             for (a in x[[i]]) cat(a," ")
         } else {
-            cat (tmpname %+% " = ")
+            cat (tmpname %.% " = ")
             for (a in x[[i]]) cat(a," ")
             if (i!=length(x)) cat ("; ")
         }

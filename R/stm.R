@@ -71,7 +71,7 @@ stm = function (formula, dat, strata.formula, phase2.ind=NULL, imputation.formul
         }
         t.step1a=Sys.time()
         if(verbose) {   
-            cat("Time spent in step 1(a): "%+%format(t.step1a-begin)%+%"\n")
+            cat("Time spent in step 1(a): "%.%format(t.step1a-begin)%.%"\n")
         }
         
         
@@ -93,7 +93,7 @@ stm = function (formula, dat, strata.formula, phase2.ind=NULL, imputation.formul
         } else {
             
             t.step1b=Sys.time()
-            if(verbose) cat("Time spent in step 1(b): "%+%format(t.step1b-t.step1a)%+%"\n")
+            if(verbose) cat("Time spent in step 1(b): "%.%format(t.step1b-t.step1a)%.%"\n")
             
             
             #########################################
@@ -146,7 +146,7 @@ stm = function (formula, dat, strata.formula, phase2.ind=NULL, imputation.formul
         #        summary(exp(- r %*% lambda.hat.expansion)-1 - -(r%*%lambda.hat.expansion))
             
                 t.step2=Sys.time()
-                if(verbose) cat("Time spent in step 2: "%+%format(t.step2-t.step1b)%+%"\n")
+                if(verbose) cat("Time spent in step 2: "%.%format(t.step2-t.step1b)%.%"\n")
                         
             
                 #########################################
@@ -160,7 +160,7 @@ stm = function (formula, dat, strata.formula, phase2.ind=NULL, imputation.formul
                     calibration=list(lambda=lambda, r=r))
             
                 t.step3=Sys.time()
-                if(verbose) cat("Time spent in step 3: "%+%format(t.step3-t.step2)%+%"\n")
+                if(verbose) cat("Time spent in step 3: "%.%format(t.step3-t.step2)%.%"\n")
                 
             } # end if is.null(r)
     
@@ -169,7 +169,7 @@ stm = function (formula, dat, strata.formula, phase2.ind=NULL, imputation.formul
     } # end     if (is.null(imputation.formula)) 
     
     end=Sys.time()
-    if(show.time.elapsed) cat("\nTotal time passed: "%+%format(end-begin)%+%"\n")
+    if(show.time.elapsed) cat("\nTotal time passed: "%.%format(end-begin)%.%"\n")
     
     if(is.null(res)) res = matrix(NA, nrow=p, ncol=2)
     
@@ -210,7 +210,7 @@ stm.internal = function (formula, dat, strata.formula, phase2.ind,
     
     #### estimate survival function of censoring variable
     # estimate censoring function with the full cohort, because (X,d) are available for all
-    censoring.s = survfit(as.formula("Surv("%+%Xcol%+%",1-"%+%dcol%+%")~1"), data=dat)    
+    censoring.s = survfit(as.formula("Surv("%.%Xcol%.%",1-"%.%dcol%.%")~1"), data=dat)    
     idx=sapply(1:n, function(j) sum(censoring.s$time-dat.phase2[[Xcol]][j] <= 1e-10) ) # if we use censoring.s$time <= dat.phase2[[Xcol]][j], we wil run into numerical problem
     # choose one of three
     # following Cheng et al. and Fine et al. and use survival function estimates, which is Pr(C>x)
@@ -228,7 +228,7 @@ stm.internal = function (formula, dat, strata.formula, phase2.ind,
     # remove intercept column
     Z=model.matrix(formula, dat.phase2)[,-1,drop=F] 
     p=ncol(Z)+1 # Z does not have intercept
-    if (n!=nrow(Z)) stop ("n!=nrow(Z) " %+% n %+% " != " %+% nrow(Z))            
+    if (n!=nrow(Z)) stop ("n!=nrow(Z) " %.% n %.% " != " %.% nrow(Z))            
     Z.ij = Z[ii,,drop=F]-Z[jj,,drop=F] # n**2 by p-1
     Z.ii = Z[ii,,drop=F] # n**2 by p-1
     Z.jj = Z[jj,,drop=F] # n**2 by p-1
@@ -472,7 +472,7 @@ stm.internal = function (formula, dat, strata.formula, phase2.ind,
     
     end=Sys.time()
     if (verbose) cat ("stm coef: ", out[,1], "\n")
-    if(show.time.elapsed) cat("Time spent in stm.internal() "%+%format(end-begin)%+%"\n")
+    if(show.time.elapsed) cat("Time spent in stm.internal() "%.%format(end-begin)%.%"\n")
         
     attr(out,"class")="stm"    
     invisible (out) 
